@@ -1,0 +1,238 @@
+/* ========== LIGHT THEME STYLES ========== */
+body.light-theme {
+    background: #f5f7fb;
+    color: #2d3748;
+}
+
+.light-theme .wrapper {
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+}
+
+/* ---------- ПАНЕЛИ ---------- */
+.light-theme .panel,
+.light-theme .contacts_and_search {
+    background: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+}
+
+.light-theme .messages_chats {
+    background: #ffffff;
+    border-left: 1px solid #e2e8f0;
+}
+
+/* ---------- НАВИГАЦИЯ ---------- */
+.light-theme .panel>div {
+    color: #4a5568;
+    margin: 8px 12px;
+    padding: 12px 16px;
+    transition: all 0.2s ease;
+}
+
+.light-theme .panel>div:hover {
+    background: #edf2f7;
+    color: #3182ce;
+    border-color: #3182ce;
+}
+
+.light-theme .panel button:hover {
+    color: #3182ce;
+}
+
+/* ---------- ПОИСК ---------- */
+.light-theme .search {
+    background: #f8fafc !important;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.light-theme .search_div input {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #2d3748;
+    border-radius: 20px;
+    padding: 8px 16px;
+}
+
+.light-theme .search_div input:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+}
+
+.light-theme .search button:hover {
+    color: #3182ce;
+}
+
+/* ---------- КОНТАКТЫ ---------- */
+.light-theme .contact {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.light-theme .contact:hover {
+    background: #edf2f7;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .contact .logo img {
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+}
+
+.light-theme .contactInfo p:first-child {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.light-theme .contactInfo p:last-child {
+    color: #718096;
+}
+
+.light-theme .datatime_message {
+    color: #a0aec0;
+}
+
+/* Активный чат */
+.light-theme .contact.active {
+    background: #ebf8ff;
+    border-left: 3px solid #3182ce;
+}
+
+/* ---------- ЗАГОЛОВОК ЧАТА ---------- */
+.light-theme .heada_chat {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.light-theme .title_chat {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.light-theme .left_head_chat img {
+    border: 2px solid #e2e8f0;
+    border-radius: 50%;
+}
+
+.light-theme .chat_actions button:hover {
+    color: #3182ce;
+}
+
+/* ---------- ОКНО СООБЩЕНИЙ ---------- */
+.light-theme .messages_chat {
+    background: #f7fafc;
+}
+
+/* ---------- СООБЩЕНИЯ ---------- */
+.light-theme .message-content {
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Сообщения от собеседника */
+.light-theme .message:not(.user-message) .message-content {
+    background: #ffffff;
+    color: #2d3748;
+    border: 1px solid #e2e8f0;
+}
+
+/* Мои сообщения */
+.light-theme .user-message .message-content {
+    background: #3182ce;
+    color: #ffffff;
+    border: 1px solid #2b6cb0;
+}
+
+.light-theme .message-time {
+    color: #a0aec0;
+    font-size: 11px;
+}
+
+/* ---------- ПОЛЕ ВВОДА ---------- */
+.light-theme .sendmessage {
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.light-theme .sendmessage input {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #2d3748;
+    border-radius: 20px;
+    padding: 10px 16px;
+}
+
+.light-theme .sendmessage input:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+}
+
+.light-theme .sendmessage button:hover {
+    color: #3182ce;
+}
+
+/* ---------- ЭМОДЗИ ПИКЕР ---------- */
+.light-theme .emoji-picker {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.light-theme .emoji-picker .search-box input {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #2d3748;
+}
+
+.light-theme .emoji-picker .emoji-grid {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.light-theme .emoji-picker .emoji-item:hover {
+    background: #edf2f7;
+    border-radius: 6px;
+}
+
+/* ---------- SCROLLBAR ---------- */
+.light-theme ::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 3px;
+}
+
+.light-theme ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+/* ---------- УВЕДОМЛЕНИЯ ---------- */
+.light-theme .notification {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #4a5568;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.light-theme .chat_actions button {
+    color: #a1a1aa;
+}
+
+.light-theme .heada_chat .left_head_chat button {
+    color: #a1a1aa;   
+}
+
+.light-theme .back {
+    color: #a1a1aa;
+}
+
+.light-theme .search-chat {
+    border-bottom: 1px solid #a1a1aa;
+}

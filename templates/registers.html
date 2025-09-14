@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/registers.css') }}">
+    
+    <!-- Библиотека intl-tel-input -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+    
+    <title>Регистрация</title>
+    
+</head>
+<body>
+    <main>
+        <div class="forma">
+            <form action="" method="post" class="registers_form">
+                <h1>Регестрация</h1>
+                <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required>
+
+                <input type="password" name="password" placeholder="Введите код" maxlength="6" required>
+                
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+            <p>У вас есть акаунт?</p>
+            <button class="log_in">Войти</button>
+        </div>
+    </main>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Функция для инициализации intlTelInput
+        function initIntlTelInput() {
+            const phoneInput = document.querySelector("#phone");
+            if (phoneInput) {  // Проверка, что элемент существует
+                window.intlTelInput(phoneInput, {
+                    separateDialCode: true,  // Разделяет код страны и номер
+                    initialCountry: "ru",    // Начальная страна (Россия)
+                    preferredCountries: ["ru", "us", "gb"],  // Приоритетные страны
+                    utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"  // Для форматирования
+                });
+            }
+        }
+    
+        // Функция для рендера формы (чтобы избежать дублирования)
+        function renderForm(isLogin = false) {
+            const forma = document.querySelector(".forma");
+            if (!forma) return;  // Проверка на существование
+    
+            forma.innerHTML = `
+                <form action="" method="${isLogin ? 'get' : 'post'}" class="registers_form">
+                    <h1>${isLogin ? 'Войти' : 'Регистрация'}</h1>
+                    <input type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required>
+                    <input type="password" name="password" placeholder="${isLogin ? 'Введите код' : "Введите код"}" maxlength="6" required>
+                    <button type="submit">${isLogin ? 'Войти' : 'Зарегистрироваться'}</button>
+                </form>
+                <p>${isLogin ? 'У вас нет аккаунта?' : 'У вас есть аккаунт?'}</p>
+                <button class="${isLogin ? 'registration' : 'log_in'}">${isLogin ? 'Зарегистрироваться' : 'Войти'}</button>
+            `;
+    
+            // Переинициализируем intlTelInput после замены HTML
+            initIntlTelInput();
+        }
+    
+        // Инициализация первой формы (вход по умолчанию)
+        renderForm(true);
+    
+        // Делегирование событий (работает даже после замены HTML)
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('log_in')) {
+                event.preventDefault();
+                renderForm(true);  // Показываем форму входа
+            } else if (event.target.classList.contains('registration')) {
+                event.preventDefault();
+                renderForm(false);  // Показываем форму регистрации
+            }
+        });
+    });
+    </script>
+</body>
+</html>

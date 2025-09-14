@@ -1,0 +1,197 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Чтобы границы не ломали размеры */
+}
+
+/* Убираем outline у всех интерактивных элементов */
+input,
+button,
+select,
+textarea,
+a {
+    outline: none;
+}
+
+body {
+    background: #0d0d0d;
+    font-family: 'Arial', sans-serif; /* Добавил шрифт для лучшего вида */
+    color: white;
+    overflow: hidden; /* Убираем скролл, так как height: 100vh */
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%); /* Лёгкий градиент для глубины */
+}
+
+.iti__country-name {
+    color: black;
+}
+
+.forma {
+    width: max-content;
+    height: auto; /* Убрал фиксированную высоту, чтобы подстраивалось под контент */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border-radius: 20px; /* Мягкие углы для контейнера */
+    background: rgba(17, 17, 17, 0.9); /* Полупрозрачный фон для формы */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Тень для объёма */
+}
+
+.registers_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+     /* Ограничил ширину для мобильных */
+}
+
+.iti.iti--allow-dropdown.iti--separate-dial-code {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.iti--separate-dial-code .iti__selected-dial-code {
+    color: white;
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 50px 0 0 50px;
+}
+
+.registers_form input {
+    border: 1px solid #1e1e1e;
+    background: #111;
+    padding: 15px 20px; /* Больше отступов для комфорта */
+    margin: 10px 0;
+    border-radius: 50px;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.registers_form input:focus {
+    border-color: #333; /* Светлее при фокусе */
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.5); /* Свечение при фокусе */
+    background: #1a1a1a; /* Лёгкое затемнение */
+}
+
+button {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    padding: 15px 20px;
+    color: white;
+    border-radius: 50px;
+    width: 100%; /* Кнопки на всю ширину контейнера */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+}
+
+.forma h1 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+button:hover {
+    background: #333; /* Светлее при наведении */
+    border-color: #555;
+    box-shadow: 0 5px 15px rgba(51, 51, 51, 0.5); /* Тень для эффекта поднятия */
+    transform: translateY(-2px); /* Лёгкое поднятие */
+}
+
+.forma p {
+    color: white;
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Новые стили для секции кода верификации */
+#codeSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 0;
+}
+
+#verificationCode {
+    border: 1px solid #1e1e1e;
+    background: #111;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 50px;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-align: center; /* Код по центру для удобства */
+}
+
+#verificationCode:focus {
+    border-color: #333;
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.5);
+    background: #1a1a1a;
+}
+
+#timerText {
+    color: #ccc;
+    font-size: 14px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#resendCodeBtn {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 50px;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px 0;
+}
+
+#resendCodeBtn:hover:not(:disabled) {
+    background: #333;
+    border-color: #555;
+}
+
+#resendCodeBtn:disabled {
+    background: #333;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Адаптивность для мобильных (расширил для новых элементов) */
+@media (max-width: 768px) {
+    .forma {
+        width: 90%;
+        padding: 20px;
+    }
+    .registers_form {
+        max-width: 100%;
+    }
+    #verificationCode {
+        font-size: 14px;
+        padding: 12px 18px;
+    }
+    #resendCodeBtn {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
